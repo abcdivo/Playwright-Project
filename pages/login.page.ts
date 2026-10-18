@@ -20,4 +20,9 @@ export class LoginPage{
         await this.passwordField.fill(password)
         await this.loginButton.click()
     }
+
+    async loginWithoutButton(email:string, password:string){
+        await this.emailField.fill(email)
+        await this.passwordField.fill(password)
+    }
 }
