@@ -3,7 +3,7 @@ import { RegisterPage } from '../pages/register.page';
 import { HomePage } from '../pages/home.page';
 
 test('Register with valid Credentials', async ({ page }) => {
-  await page.goto('https://www.emra.chat/signup');
+  await page.goto('/signup');
   
   const registerPage = new RegisterPage(page)
   const homePage = new HomePage(page)
@@ -25,7 +25,7 @@ test('Register with valid Credentials', async ({ page }) => {
 });
 
 test('Register with empty Email', async ({ page }) => {
-  await page.goto('https://www.emra.chat/signup');
+  await page.goto('/signup');
   
   const registerPage = new RegisterPage(page)
   const email = ''
@@ -39,7 +39,7 @@ test('Register with empty Email', async ({ page }) => {
 });
 
 test('Register with empty Password', async ({ page }) => {
-  await page.goto('https://www.emra.chat/signup');
+  await page.goto('/signup');
   
   const registerPage = new RegisterPage(page)
   const email = 'customerdata09@yopmail.com'
@@ -53,7 +53,7 @@ test('Register with empty Password', async ({ page }) => {
 });
 
 test('Register with empty Confirm Password', async ({ page }) => {
-  await page.goto('https://www.emra.chat/signup');
+  await page.goto('/signup');
   
   const registerPage = new RegisterPage(page)
   const email = 'customerdata09@yopmail.com'
@@ -66,7 +66,7 @@ test('Register with empty Confirm Password', async ({ page }) => {
 });
 
 test('Register when Password contains fewer than 8 characters', async ({ page }) => {
-  await page.goto('https://www.emra.chat/signup');
+  await page.goto('/signup');
   
   const registerPage = new RegisterPage(page)
   const email = 'customerdata09@yopmail.com'
@@ -79,7 +79,7 @@ test('Register when Password contains fewer than 8 characters', async ({ page })
 });
 
 test('Register when Password and Confirm Password not match', async ({ page }) => {
-  await page.goto('https://www.emra.chat/signup');
+  await page.goto('/signup');
   
   const registerPage = new RegisterPage(page)
   const email = 'customerdata09@yopmail.com'
@@ -92,7 +92,7 @@ test('Register when Password and Confirm Password not match', async ({ page }) =
 });
 
 test('Register with empty Fullname',async({page})=>{
-  await page.goto('https://www.emra.chat/signup');
+  await page.goto('/signup');
   const registerPage = new RegisterPage(page)
   const email = 'customerdata12@yopmail.com'
   const password = 'Testing1234'
@@ -106,7 +106,7 @@ test('Register with empty Fullname',async({page})=>{
  })
 
  test('Register with Fullname under 2 character',async({page})=>{
-  await page.goto('https://www.emra.chat/signup');
+  await page.goto('/signup');
   const registerPage = new RegisterPage(page)
   const email = 'customerdata12@yopmail.com'
   const password = 'Testing1234'
@@ -121,7 +121,7 @@ test('Register with empty Fullname',async({page})=>{
 
  test('Register with Phone Number is empty',async({page})=>{
 
-  await page.goto('https://www.emra.chat/signup');
+  await page.goto('/signup');
   const registerPage = new RegisterPage(page)
   const email = 'customerdata12@yopmail.com'
   const password = 'Testing1234'
@@ -137,7 +137,7 @@ test('Register with empty Fullname',async({page})=>{
 
   test('Register with invalid Phone Number',async({page})=>{
 
-  await page.goto('https://www.emra.chat/signup');
+  await page.goto('/signup');
   const registerPage = new RegisterPage(page)
   const email = 'customerdata12@yopmail.com'
   const password = 'Testing1234'
@@ -152,7 +152,7 @@ test('Register with empty Fullname',async({page})=>{
  })
 
  test('Register with Company Name is empty', async ({ page }) => {
-  await page.goto('https://www.emra.chat/signup');
+  await page.goto('/signup');
   
   const registerPage = new RegisterPage(page)
   const email = 'customerdata14@yopmail.com'
@@ -176,7 +176,7 @@ test('Register with empty Fullname',async({page})=>{
 });
 
 test('Register with Industry is not select', async ({ page }) => {
-  await page.goto('https://www.emra.chat/signup');
+  await page.goto('/signup');
   
   const registerPage = new RegisterPage(page)
   const email = 'customerdata14@yopmail.com'
@@ -200,7 +200,7 @@ test('Register with Industry is not select', async ({ page }) => {
 });
 
 test('Register with Company Size is not select', async ({ page }) => {
-  await page.goto('https://www.emra.chat/signup');
+  await page.goto('/signup');
   
   const registerPage = new RegisterPage(page)
   const email = 'customerdata14@yopmail.com'

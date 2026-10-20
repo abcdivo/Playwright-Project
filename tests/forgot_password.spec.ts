@@ -3,7 +3,7 @@ import { ForgotpasswordPage } from "../pages/forgot_password.page";
 
 
 test('Forgot password with valid credentials',async({page})=>{
-    await page.goto('https://www.emra.chat/forgot-password')
+    await page.goto('/forgot-password')
     const forgotPasswordPage = new ForgotpasswordPage(page)
     const email = 'customerdata14@yopmail.com'
 
