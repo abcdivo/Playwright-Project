@@ -6,6 +6,8 @@ on:                           # 2. Kapan di-trigger
   pull_request:
     branches: [ main, master ]
 
+  workflow_dispatch:
+
 jobs:                         # 3. Job yang dijalankan
   test:                       # Nama job
     timeout-minutes: 60        # 4. Batas waktu maksimal
