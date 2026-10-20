@@ -1,0 +1,22 @@
+{
+    "login_valid_user" :{
+        "email" : "testingemrachat@yopmail.com",
+        "password" : "tester!23"
+    },
+    "login_valid_email_invalid_password_user" :{
+        "email":"testingemrachat@yopmail.com",
+        "password":"tester23"
+    },
+    "login_invalid_email_valid_password_user":{
+         "email":"blablabla@yopmail.com",
+        "password":"tester23"
+    },
+    "login_empty_email_valid_password_user":{
+        "email":"",
+        "password":"tester!23"
+    },
+    "login_valid_email_empty_password_user":{
+        "email":"",
+        "password":"testingemrachat@yopmail.com"
+    }
+}
