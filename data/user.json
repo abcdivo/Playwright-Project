@@ -10,7 +10,7 @@
     }  },
     "register":{
          "register_valid_credentials" : {
-            "email": "customerdata13@yopmail.com",
+            "email": "customerdata15@yopmail.com",
             "password": "Testing1234",
             "confirmPassword": "Testing1234",
             "fullName": "Fikrial Pane A",
@@ -21,9 +21,9 @@
 
         "register_invalid_credentials" :{
             "email": "blablabla@yopmail.com",
-            "password": "Testing1324",
-            "confirmPassword": "Testing1234",
-            "fullName": "Fikrial Pane A Blablabla",
+            "password": "Te",
+            "confirmPassword": "Testg1234",
+            "fullName": "F",
             "phoneNumber": "8214",
             "companyName": "Bank Jawa Barat",
             "industry": "finance",
