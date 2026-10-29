@@ -7,7 +7,7 @@ import userData from '../data/user.json';
 //   await page.goto('/signup'); 
   
 //   const registerPage = new RegisterPage(page)
-//   const homePage = new HomePage(page)
+//   const homePage = new HomePage(page) 
 //   const email = userData.register.register_valid_credentials.email
 //   const password = userData.register.register_valid_credentials.password
 //   const confirmPassword = userData.register.register_valid_credentials.confirmPassword

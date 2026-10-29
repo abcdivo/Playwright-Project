@@ -16,7 +16,7 @@ jobs:                         # 3. Job yang dijalankan
     steps:
       - name: Script
         run: echo "code_analyze"
-
+  
   test:                       # Nama job
     timeout-minutes: 60        # 4. Batas waktu maksimal
     runs-on: ubuntu-latest    # 5. OS runner
