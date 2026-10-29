@@ -4,7 +4,7 @@ import { HomePage } from '../pages/home.page';
 import userData from '../data/user.json';
 
 // test('Register with valid Credentials', async ({ page }) => {
-//   await page.goto('/signup');
+//   await page.goto('/signup'); 
   
 //   const registerPage = new RegisterPage(page)
 //   const homePage = new HomePage(page)
