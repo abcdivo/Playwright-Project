@@ -23,6 +23,9 @@ jobs:                         # 3. Job yang dijalankan
     needs : [code_analyze]
     container:                # 6. Docker container
       image: divo164/personal_project:base
+
+    env:
+      BASE_URL: ${{ vars.BASE_URL }}
     steps:                    # 7. Langkah-langkah
       - name: Checkout Repository
         uses: actions/checkout@v4
