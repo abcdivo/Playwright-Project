@@ -9,8 +9,8 @@ test('login with valid credentials', async ({ page }) => {
   await page.goto('/login');
   const loginPage = new LoginPage(page)
   const homePage = new HomePage(page)
-  const email = userData.login.login_valid_credentials.email
-  const password =userData.login.login_valid_credentials.password
+  const email = userData.login_valid_credentials.email
+  const password =userData.login_valid_credentials.password
 
   await loginPage.loginAs(email,password)
   await expect(homePage.welcometext).toBeVisible()
