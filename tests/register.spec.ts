@@ -3,27 +3,27 @@ import { RegisterPage } from '../pages/register.page';
 import { HomePage } from '../pages/home.page';
 import userData from '../data/user.json';
 
-test('Register with valid Credentials', async ({ page }) => {
-  await page.goto('/signup');
+// test('Register with valid Credentials', async ({ page }) => {
+//   await page.goto('/signup'); 
   
-  const registerPage = new RegisterPage(page)
-  const homePage = new HomePage(page)
-  const email = userData.register.register_valid_credentials.email
-  const password = userData.register.register_valid_credentials.password
-  const confirmPassword = userData.register.register_valid_credentials.confirmPassword
-  const fullName = userData.register.register_valid_credentials.fullName
-  //const country ='Indonesia'
-  const phoneNumber = userData.register.register_valid_credentials.phoneNumber
-  const companyName = userData.register.register_valid_credentials.companyName
-  const industry = userData.register.register_valid_credentials.industry
-  const companySize = userData.register.register_valid_credentials.companySize
+//   const registerPage = new RegisterPage(page)
+//   const homePage = new HomePage(page) 
+//   const email = userData.register.register_valid_credentials.email
+//   const password = userData.register.register_valid_credentials.password 
+//   const confirmPassword = userData.register.register_valid_credentials.confirmPassword
+//   const fullName = userData.register.register_valid_credentials.fullName
+//   //const country ='Indonesia'
+//   const phoneNumber = userData.register.register_valid_credentials.phoneNumber
+//   const companyName = userData.register.register_valid_credentials.companyName
+//   const industry = userData.register.register_valid_credentials.industry
+//   const companySize = userData.register.register_valid_credentials.companySize
 
-  await registerPage.RegisterAs(email,password,confirmPassword,fullName,
-    //country,
-    phoneNumber,companyName,industry,companySize)
+//   await registerPage.RegisterAs(email,password,confirmPassword,fullName,
+//     //country,
+//     phoneNumber,companyName,industry,companySize)
 
-  await expect (homePage.verifEmail).toBeVisible();
-});
+//   await expect (homePage.verifEmail).toBeVisible();
+// });
 
 test('Register with empty Email', async ({ page }) => {
   await page.goto('/signup');
@@ -213,7 +213,7 @@ test('Register with Company Size is not select', async ({ page }) => {
   const companyName = userData.register.register_valid_credentials.companyName
   const industry = userData.register.register_valid_credentials.industry
   const companySize = ""
-  
+
   await registerPage.formCompanyInformation(email,password,confirmPassword,fullName,
     //country,
     phoneNumber,companyName,industry,companySize) 

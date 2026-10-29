@@ -9,9 +9,18 @@ on:                           # 2. Kapan di-trigger
   workflow_dispatch:
 
 jobs:                         # 3. Job yang dijalankan
+
+  code_analyze:
+    name: Code Analyze
+    runs-on: ubuntu-latest
+    steps:
+      - name: Script
+        run: echo "code_analyze"
+
   test:                       # Nama job
     timeout-minutes: 60        # 4. Batas waktu maksimal
     runs-on: ubuntu-latest    # 5. OS runner
+    needs : [code_analyze]
     container:                # 6. Docker container
       image: divo164/personal_project:base
     steps:                    # 7. Langkah-langkah

@@ -10,7 +10,7 @@
     }  },
     "register":{
          "register_valid_credentials" : {
-            "email": "customerdata16@yopmail.com",
+            "email": "customerdata17@yopmail.com",
             "password": "Testing1234",
             "confirmPassword": "Testing1234",
             "fullName": "Fikrial Pane A",
