@@ -1,21 +1,22 @@
 import { test, expect } from '@playwright/test';
 import { RegisterPage } from '../pages/register.page';
 import { HomePage } from '../pages/home.page';
+import userData from '../data/user.json';
 
 test('Register with valid Credentials', async ({ page }) => {
   await page.goto('/signup');
   
   const registerPage = new RegisterPage(page)
   const homePage = new HomePage(page)
-  const email = 'customerdata13@yopmail.com'
-  const password = 'Testing1234'
-  const confirmPassword = 'Testing1234'
-  const fullName = 'Fikrial Pane A'
+  const email = userData.register.register_valid_credentials.email
+  const password = userData.register.register_valid_credentials.password
+  const confirmPassword = userData.register.register_valid_credentials.confirmPassword
+  const fullName = userData.register.register_valid_credentials.fullName
   //const country ='Indonesia'
-  const phoneNumber = '82143546623'
-  const companyName = 'Bank Jawa Barat'
-  const industry = 'finance'
-  const companySize = '51-200'
+  const phoneNumber = userData.register.register_valid_credentials.phoneNumber
+  const companyName = userData.register.register_valid_credentials.companyName
+  const industry = userData.register.register_valid_credentials.industry
+  const companySize = userData.register.register_valid_credentials.companySize
 
   await registerPage.RegisterAs(email,password,confirmPassword,fullName,
     //country,
@@ -29,8 +30,8 @@ test('Register with empty Email', async ({ page }) => {
   
   const registerPage = new RegisterPage(page)
   const email = ''
-  const password = 'Testing1234'
-  const confirmPassword = 'Testing1234'
+  const password = userData.register.register_valid_credentials.password
+  const confirmPassword = userData.register.register_valid_credentials.confirmPassword
   
 
   await registerPage.formCreateAccount(email,password,confirmPassword)
@@ -42,9 +43,9 @@ test('Register with empty Password', async ({ page }) => {
   await page.goto('/signup');
   
   const registerPage = new RegisterPage(page)
-  const email = 'customerdata09@yopmail.com'
+  const email = userData.register.register_valid_credentials.email
   const password = ''
-  const confirmPassword = 'Testing1234'
+  const confirmPassword = userData.register.register_valid_credentials.confirmPassword
   
 
   await registerPage.formCreateAccount(email,password,confirmPassword)
@@ -56,8 +57,8 @@ test('Register with empty Confirm Password', async ({ page }) => {
   await page.goto('/signup');
   
   const registerPage = new RegisterPage(page)
-  const email = 'customerdata09@yopmail.com'
-  const password = 'Testing1234'
+  const email = userData.register.register_valid_credentials.email
+  const password = userData.register.register_valid_credentials.password
   const confirmPassword = ''
   
   await registerPage.formCreateAccount(email,password,confirmPassword)
@@ -69,9 +70,9 @@ test('Register when Password contains fewer than 8 characters', async ({ page })
   await page.goto('/signup');
   
   const registerPage = new RegisterPage(page)
-  const email = 'customerdata09@yopmail.com'
-  const password = 'test'
-  const confirmPassword = 'Testing1234'
+  const email = userData.register.register_valid_credentials.email
+  const password = userData.register.register_invalid_credentials.password
+  const confirmPassword = userData.register.register_valid_credentials.confirmPassword
   
   await registerPage.formCreateAccount(email,password,confirmPassword)
   await expect (registerPage.alertPassword).toBeVisible()
@@ -82,9 +83,9 @@ test('Register when Password and Confirm Password not match', async ({ page }) =
   await page.goto('/signup');
   
   const registerPage = new RegisterPage(page)
-  const email = 'customerdata09@yopmail.com'
-  const password = 'Testing1234'
-  const confirmPassword = 'Testi'
+  const email = userData.register.register_valid_credentials.email
+  const password = userData.register.register_valid_credentials.password
+  const confirmPassword = userData.register.register_invalid_credentials.confirmPassword
   
   await registerPage.formCreateAccount(email,password,confirmPassword)
   await expect (registerPage.alertPasswordNotMatch).toBeVisible()
@@ -94,11 +95,11 @@ test('Register when Password and Confirm Password not match', async ({ page }) =
 test('Register with empty Fullname',async({page})=>{
   await page.goto('/signup');
   const registerPage = new RegisterPage(page)
-  const email = 'customerdata12@yopmail.com'
-  const password = 'Testing1234'
-  const confirmPassword = 'Testing1234'
+  const email = userData.register.register_valid_credentials.email
+  const password = userData.register.register_valid_credentials.password
+  const confirmPassword = userData.register.register_valid_credentials.confirmPassword
   const fullname = ''
-  const phonenumber ='82173456632'
+  const phonenumber =userData.register.register_valid_credentials.phoneNumber
 
   await registerPage.formUserInformation(email, password, confirmPassword, fullname,phonenumber)
 
@@ -108,11 +109,11 @@ test('Register with empty Fullname',async({page})=>{
  test('Register with Fullname under 2 character',async({page})=>{
   await page.goto('/signup');
   const registerPage = new RegisterPage(page)
-  const email = 'customerdata12@yopmail.com'
-  const password = 'Testing1234'
-  const confirmPassword = 'Testing1234'
-  const fullname = 'p'
-  const phonenumber ='82173456632'
+  const email = userData.register.register_valid_credentials.email
+  const password = userData.register.register_valid_credentials.password
+  const confirmPassword = userData.register.register_valid_credentials.confirmPassword
+  const fullname = userData.register.register_invalid_credentials.fullName
+  const phonenumber =userData.register.register_valid_credentials.phoneNumber
 
   await registerPage.formUserInformation(email, password, confirmPassword, fullname,phonenumber)
 
@@ -123,10 +124,10 @@ test('Register with empty Fullname',async({page})=>{
 
   await page.goto('/signup');
   const registerPage = new RegisterPage(page)
-  const email = 'customerdata12@yopmail.com'
-  const password = 'Testing1234'
-  const confirmPassword = 'Testing1234'
-  const fullname = 'PA'
+  const email = userData.register.register_valid_credentials.email
+  const password = userData.register.register_valid_credentials.password
+  const confirmPassword = userData.register.register_valid_credentials.confirmPassword
+  const fullname = userData.register.register_valid_credentials.fullName
   const phonenumber =''
 
   await registerPage.formUserInformation(email, password, confirmPassword, fullname,phonenumber)
@@ -139,11 +140,11 @@ test('Register with empty Fullname',async({page})=>{
 
   await page.goto('/signup');
   const registerPage = new RegisterPage(page)
-  const email = 'customerdata12@yopmail.com'
-  const password = 'Testing1234'
-  const confirmPassword = 'Testing1234'
-  const fullname = 'PA'
-  const phonenumber ='08343'
+  const email = userData.register.register_valid_credentials.email
+  const password = userData.register.register_valid_credentials.password
+  const confirmPassword = userData.register.register_valid_credentials.confirmPassword
+  const fullname = userData.register.register_valid_credentials.fullName
+  const phonenumber =userData.register.register_invalid_credentials.phoneNumber
 
   await registerPage.formUserInformation(email, password, confirmPassword, fullname,phonenumber)
   await registerPage.buttonNext.click()
@@ -155,15 +156,15 @@ test('Register with empty Fullname',async({page})=>{
   await page.goto('/signup');
   
   const registerPage = new RegisterPage(page)
-  const email = 'customerdata14@yopmail.com'
-  const password = 'Testing1234'
-  const confirmPassword = 'Testing1234'
-  const fullName = 'Fikrial Pane A'
+  const email = userData.register.register_valid_credentials.email
+  const password = userData.register.register_valid_credentials.password
+  const confirmPassword = userData.register.register_valid_credentials.confirmPassword
+  const fullName = userData.register.register_valid_credentials.fullName
   //const country ='Indonesia'
-  const phoneNumber = '82143546623'
+  const phoneNumber = userData.register.register_valid_credentials.phoneNumber
   const companyName = ''
-  const industry = 'finance'
-  const companySize = '51-200'
+  const industry = userData.register.register_valid_credentials.industry
+  const companySize = userData.register.register_valid_credentials.companySize
 
   await registerPage.formCompanyInformation(email,password,confirmPassword,fullName,
     //country,
@@ -179,15 +180,15 @@ test('Register with Industry is not select', async ({ page }) => {
   await page.goto('/signup');
   
   const registerPage = new RegisterPage(page)
-  const email = 'customerdata14@yopmail.com'
-  const password = 'Testing1234'
-  const confirmPassword = 'Testing1234'
-  const fullName = 'Fikrial Pane A'
+const email = userData.register.register_valid_credentials.email
+  const password = userData.register.register_valid_credentials.password
+  const confirmPassword = userData.register.register_valid_credentials.confirmPassword
+  const fullName = userData.register.register_valid_credentials.fullName
   //const country ='Indonesia'
-  const phoneNumber = '82143546623'
-  const companyName = 'MASI'
+  const phoneNumber = userData.register.register_valid_credentials.phoneNumber
+  const companyName = userData.register.register_valid_credentials.companyName
   const industry = ''
-  const companySize = '51-200'
+  const companySize = userData.register.register_valid_credentials.companySize
 
   await registerPage.formCompanyInformation(email,password,confirmPassword,fullName,
     //country,
@@ -203,16 +204,16 @@ test('Register with Company Size is not select', async ({ page }) => {
   await page.goto('/signup');
   
   const registerPage = new RegisterPage(page)
-  const email = 'customerdata14@yopmail.com'
-  const password = 'Testing1234'
-  const confirmPassword = 'Testing1234'
-  const fullName = 'Fikrial Pane A'
+   const email = userData.register.register_valid_credentials.email
+  const password = userData.register.register_valid_credentials.password
+  const confirmPassword = userData.register.register_valid_credentials.confirmPassword
+  const fullName = userData.register.register_valid_credentials.fullName
   //const country ='Indonesia'
-  const phoneNumber = '82143546623'
-  const companyName = 'MASI'
-  const industry = 'SaaS'
-  const companySize = ''
-
+  const phoneNumber = userData.register.register_valid_credentials.phoneNumber
+  const companyName = userData.register.register_valid_credentials.companyName
+  const industry = userData.register.register_valid_credentials.industry
+  const companySize = ""
+  
   await registerPage.formCompanyInformation(email,password,confirmPassword,fullName,
     //country,
     phoneNumber,companyName,industry,companySize) 
