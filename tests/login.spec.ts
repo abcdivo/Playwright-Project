@@ -21,8 +21,8 @@ test('login with valid email and invalid password', async ({ page }) => {
   await page.goto('/login');
   
   const loginPage = new LoginPage(page)
-  const email = userData.login_valid_credentials.email
-  const password =userData.login_invalid_credentials.password
+  const email = userData.login.login_valid_credentials.email
+  const password =userData.login.login_invalid_credentials.password
 
   await loginPage.loginAs(email,password)
   await expect(loginPage.flashMessage).toBeVisible()
@@ -33,8 +33,8 @@ test('login with invalid email and valid password', async ({ page }) => {
   await page.goto('/login');
 
   const loginPage = new LoginPage(page)
-  const email = userData.login_invalid_credentials.email
-  const password = userData.login_valid_credentials.password
+  const email = userData.login.login_invalid_credentials.email
+  const password = userData.login.login_valid_credentials.password
   await loginPage.loginAs(email,password)
   await expect(loginPage.flashMessage).toBeVisible()
 });
@@ -45,7 +45,7 @@ await page.goto('/login')
 
 const loginPage = new LoginPage(page)
 const email = ""
-const password =userData.login_valid_credentials.password
+const password =userData.login.login_valid_credentials.password
 
 await loginPage.loginWithoutButton(email, password)
 await expect(loginPage.loginButton).toBeDisabled()
@@ -57,7 +57,7 @@ test('login with valid email and empty password', async({page}) => {
 await page.goto('/login')
 
 const loginPage = new LoginPage(page)
-const email = userData.login_valid_credentials.email
+const email = userData.login.login_valid_credentials.email
 const password = ""
 
 await loginPage.loginWithoutButton(email, password)
