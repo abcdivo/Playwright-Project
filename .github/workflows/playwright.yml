@@ -13,7 +13,7 @@ jobs:                         # 3. Job yang dijalankan
     timeout-minutes: 60        # 4. Batas waktu maksimal
     runs-on: ubuntu-latest    # 5. OS runner
     container:                # 6. Docker container
-      image: fadhlimaulidri/bootcamp_automation_2a:base
+      image: divo164/personal_project:base
     steps:                    # 7. Langkah-langkah
       - name: Checkout Repository
         uses: actions/checkout@v4
