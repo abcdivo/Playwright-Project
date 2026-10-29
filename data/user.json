@@ -1,0 +1,35 @@
+{ 
+    "login" : {
+         "login_valid_credentials" :{
+           "email" : "testingemrachat@yopmail.com",
+           "password" : "tester!23"
+    },
+         "login_invalid_credentials" :{
+            "email":"blbbababa@yopmail.com",
+            "password":"4322432"
+    }  },
+    "register":{
+         "register_valid_credentials" : {
+            "email": "customerdata13@yopmail.com",
+            "password": "Testing1234",
+            "confirmPassword": "Testing1234",
+            "fullName": "Fikrial Pane A",
+            "phoneNumber": "82143546623",
+            "companyName": "Bank Jawa Barat",
+            "industry": "finance",
+            "companySize": "51-200"},
+
+        "register_invalid_credentials" :{
+            "email": "blablabla@yopmail.com",
+            "password": "Testing1324",
+            "confirmPassword": "Testing1234",
+            "fullName": "Fikrial Pane A Blablabla",
+            "phoneNumber": "8214",
+            "companyName": "Bank Jawa Barat",
+            "industry": "finance",
+            "companySize": "51-200"
+        }
+        }
+    }
+
+
